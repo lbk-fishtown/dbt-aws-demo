@@ -9,7 +9,7 @@
         table_schema,
         table_name
     from information_schema.tables
-    where table_schema LIKE 'dbt_lbondkennedy'
+    where table_schema LIKE 'dbt_lbondkennedy%'
     order by table_schema, table_name
 
 {% endmacro %}
