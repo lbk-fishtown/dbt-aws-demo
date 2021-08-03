@@ -3,8 +3,8 @@ select dt.d_year
        ,item.i_brand brand
        ,sum(ss_net_profit) sum_agg
  from  {{ ref('stg_date_dim') }} dt 
-      ,{{ ref('stg_store_sales') }}
-      ,{{ ref('stg_item') }}
+      ,{{ ref('stg_store_sales') }} store_sales
+      ,{{ ref('stg_item') }} item
  where dt.d_date_sk = store_sales.ss_sold_date_sk
    and store_sales.ss_item_sk = item.i_item_sk
    and item.i_manufact_id = 826
