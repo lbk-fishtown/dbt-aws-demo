@@ -11,9 +11,28 @@ sources:
       - name: catalog_returns
       - name: catalog_sales
       - name: customer
+        columns:
+          - name: c_customer_id
+            tests:
+              - not_null
+              - unique
       - name: customer_address
+        columns:
+          - name: ca_address_id
+            tests:
+              - not_null
+              - unique
       - name: customer_demographics
       - name: date_dim
+        columns:
+          - name: d_date_id
+            tests:
+              - not_null
+              - unique
+          - name: d_day_name
+            tests:
+              - accepted_values:
+                  values: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']              
       - name: dbgen_version
       - name: household_demographics
       - name: income_band
@@ -24,6 +43,10 @@ sources:
       - name: reason
       - name: ship_mode
       - name: store
+        columns:
+          - name: s_store_id
+            tests:
+              - not_null  
       - name: store_returns
       - name: store_sales
       - name: time_dim
