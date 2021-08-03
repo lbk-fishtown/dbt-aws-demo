@@ -1,6 +1,9 @@
 version: 2
 
 sources:
+  - name: rjf_height
+    tables:
+      - name: height_survey_results
   - name: tpc
     tables:
       - name: call_center
